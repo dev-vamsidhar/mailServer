@@ -217,7 +217,7 @@ app.post("/sendMail", async (req, res) => {
       var uniqueId = Date.now();
       msgBody =
         msgBody +
-        `<br/> <img src='${serverName}/track?id=uniqueId' style="display:none" >`;
+        `<br/> <img src='${serverName}/track?id=${uniqueId}' style="display:none" >`;
 
       const mailOptions = {
         from: emailId,
@@ -252,7 +252,7 @@ app.get("/track", (req, res) => {
   res.sendFile(__dirname + "/test.jpeg");
 });
 
-app.listen(8080, () => {
+app.listen(3000, () => {
   console.log("listening");
 });
 
